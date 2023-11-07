@@ -14,6 +14,7 @@ if page.status_code == 200:
     temp_element = soup.select_one('div.weather-tabs__panel:nth-child(2) > div:nth-child(1) > div:nth-child(1) > div:nth-child(1) > div:nth-child(1) > div:nth-child(2) > span:nth-child(2)')
     if temp_element:
         tempurature = temp_element.text
+        tempurature = tempurature.strip()
         print(f"WGN Naperville Temp: {tempurature}")
     else:
         print("Temperature element not found.")
